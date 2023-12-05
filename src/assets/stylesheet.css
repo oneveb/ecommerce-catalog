@@ -27,7 +27,7 @@ div {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 0;
+  z-index: 1;
 }
 
 .latar {
@@ -35,6 +35,7 @@ div {
   height: 65%;
   position: absolute;
   z-index: -1;
+  background-image: url(../assets/bg-pattern.svg);
 }
 
 .catalog-card {
@@ -73,7 +74,6 @@ div {
 }
 
 .product-name {
-  /* color: var(--navyBlue); */
   font-size: 28px;
   margin-top: 4px;
   margin-bottom: 0px;
@@ -100,15 +100,26 @@ div {
 }
 
 .circle {
+  display: none;
+}
+
+.circle.filled {
   width: 18px;
   height: 18px;
   padding: 10px 10px;
   border-radius: 50%;
-  border: 1.5px solid var(--navyBlue);
+  border: 1.5px solid;
+  display: block;
 }
 
-.circle.filled {
-  background-color: var(--navyBlue);
+.circle.empty {
+  width: 18px;
+  height: 18px;
+  padding: 10px 10px;
+  border-radius: 50%;
+  border: 1.5px solid;
+  background-color: var(--white) !important;
+  display: block;
 }
 
 .product-desc{
@@ -144,8 +155,6 @@ div {
   font-size: 20px;
   float: right;
   background-color: var(--white) !important;
-  /* color: var(--navyBlue);
-  border-color: var(--navyBlue); */
 }
 
 
@@ -157,6 +166,13 @@ div {
   justify-content: center;
   display: flex;
   flex-direction: column;
+}
+
+.sad-bg {
+  align-items: center;
+  position: absolute;
+  justify-content: center;
+  display: inline-block;
 }
 
 .unavailable-message {
